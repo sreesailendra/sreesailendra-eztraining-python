@@ -1,0 +1,131 @@
+                                                                        DAY 4
+#demo dictionary
+d={n:n*n for n in range(1,5)}
+print(d)
+
+*************************************************************
+
+#calculating product price for 5 units
+old={'rice':60,'dhaal':120,'oil':150}
+new={product:price*5 for (product,price)in old.items()}
+print(new)
+
+*************************************************************
+
+#with checks
+real={'luffy':17,'nami':17,'robin':24}
+now={name:age for (name,age) in real.items() if age>20}
+print(now)
+
+*************************************************************
+#STRING FUNCTIONS
+print('a'>'b')
+False
+
+min('abc')
+'a'
+
+max('abc')
+'c'
+
+s='roronoazoro'
+s.upper()
+'RORONOAZORO'
+
+s.lower()
+'roronoazoro'
+
+s.capitalize()
+'Roronoazoro'
+
+s.replace('r','z')
+'zozonoazozo'
+
+s.strip()
+'roronoazoro'
+
+a='hi hello bye'
+a.strip()
+'hi hello bye'
+
+s.split()
+['roronoazoro']
+
+a.split('*')
+['hi hello bye']
+
+a.center(20,'#')
+'####hi hello bye####'
+
+s.center(30,'#')
+'#########roronoazoro##########'
+
+s='roronoazoro'
+s.islower()
+True
+
+s.isupper()
+False
+
+s.istitle()
+False
+
+max(s)
+'z'
+           #a<b<c<d.........
+min(s)
+'a'
+
+s.startswith('hello',0,len(s))
+False
+
+s.rfind('a',0,len(s))   #from reverse first occurence or last occurence
+6
+***********************************************************************
+MUTABLE Vs IMMUTABLE:
+MUTABLE:-can be changed	after creation
+           ex: List, set, Dictionary
+IMMUTABLE: cant be changed after creation
+           ex:int, float, string, Bool, tuple
+
+x=69
+x
+69
+id(x)
+140719095602088
+x=70
+id(x)
+140719095602120
+l=[1,2,3,4]
+l
+[1, 2, 3, 4]
+l.append(12)
+l
+[1, 2, 3, 4, 12]
+id(l)
+2742722291904
+l.extend([3,4,5])
+l
+[1, 2, 3, 4, 12, 3, 4, 5]
+id(l)
+2742722291904
+l.append([1,2,3,4,5])
+l
+[1, 2, 3, 4, 12, 3, 4, 5, [1, 2, 3, 4, 5]]
+*******************************************************************
+#MATH MODULE
+import math
+print("CEIL 12.5:",math.ceil(12.5))
+print("FLOOR 12.5:",math.floor(12.5))
+print("SQRT 345:",math.sqrt(345))
+print("FACTORIAL 3:",math.factorial(3))
+print("2 POWER 3 :",math.pow(2,3))
+print("REMAINDER 10,3:",math.fmod(10,3))
+
+a,b=divmod(10,3)
+print(a,b)
+
+        
+
+
+
