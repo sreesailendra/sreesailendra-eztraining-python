@@ -1,1 +1,0 @@
-# sreesailendra-eztraining-python
