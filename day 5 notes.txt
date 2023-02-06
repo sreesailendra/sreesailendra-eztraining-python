@@ -1,0 +1,36 @@
+>>>RANDOM MODULE:
+we use import random
+or else we can use import random as r 
+functions in random module:
+randint,choice,shuffle,uniform,dir,choices,random
+when we use random function in random module it returns value btw 0.0 to 1.0 and it also exludes 1.0
+
+
+
+>>>FUNCTIONS:
+CLASSIFICATIONS:
+(1)pre defined functions
+(2)user defined functions
+for code reusability we use functions
+let's say we want to use a particular concept multiple times in our program instead of writing the same code multiple (or) many times ,we can write it once include that inside a function 
+and can call the function wherever we needed
+
+>>>TYPES:
+1)functions without argument ,without return value
+2)functions without argument ,with return value
+3)functions with argument,with return value
+4)functions with argument,without return value
+
+PROGRAMS:
+>>>print lemons problem using function type 1
+>>>find factors of the given number using functions type 2
+>>>print multiplication table of the given number using function type 3
+>>>find out sum of digits of the given number using functions type 4
+
+
+RECURSIVE FUNCTION (OR) RECURSION METHOD:
+   A FUNCTION WHICH CALLS ITSELF IS CALLED RECURSIVE FUNCTION THIS CONCEPT IS CALLED "RECURSION" 
+
+                    
+
+
