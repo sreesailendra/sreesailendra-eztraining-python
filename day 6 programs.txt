@@ -1,0 +1,240 @@
+#class
+class computer:
+    def config(self):
+        print("yes")
+lenovo=computer()
+lenovo.config()
+dell=computer()
+dell.config()
+
+
+#constructer
+class Employee:
+    def __init__(self,name,id):
+        self.id=id
+        self.name=name
+    def display(self):
+        print("ID: %d \nName: %s" % (self.id,self.name))
+
+Emp1=Employee("john",101)
+Emp2=Employee("david",102)
+
+Emp1.display()
+Emp2.display()
+
+
+#exception handling
+a=10
+b=0
+try:
+    print("resources open")
+    print(a/b)
+except Exception as e:
+    print("don't give second number as zero",e)
+finally:
+    print("resource closed")
+
+
+#excepton blocks
+a=10
+try:
+    b=int(input("enter a number:"))
+    print("resouce open")
+    print(a/b)
+except ZeroDivisionError as e:
+    print("please note, number cant be divided by zero")
+except ValueError as e:
+    print("invalid input",e)
+except Exception as e:
+    print("other error",e)
+finally:
+    print("rescource closed")
+
+
+#num div by 0
+a=int(input("enter a number:"))
+b=int(input("enter a number:"))
+try:
+    print(a/b)
+except Exception as e:
+    print("please note,number cant be divided by zero",e)
+    print("bye")
+
+
+#project-3-FLAMES
+name1=input("Enter the name1:").lower()
+name2=input("Enter the name2:").lower()
+#if you gave first and last name
+#with space in between
+name1=name1.replace(" "," ")
+name2=name2.replace(" "," ")
+print(name1)
+print(name2)
+for i in name1:
+    for j in name2:
+        if i==j:
+            name1=name1.replace(i,"",1)
+            name1=name1.replace(j,"",1)
+            break
+count=len(name1+name2)
+print(count)
+if count>0:
+    list1=["Friends","Lovers","Affectionate","Marriage","Enemies","Siblings"]
+    while len(list1)>1:
+        c=count%len(list1)
+        s_index=c-1
+
+        if s_index>+s_index>=0:
+            left=list1[:s_index]
+            right=list1[:s_index+1:]
+            list1=right+left
+        else:
+            list1=list1[:len(list1)-1]
+    print("Relationship:",list1[0])
+else:
+    print("Enter different names:")
+
+#pytho project quiz 1
+q1="""who is the successfull caption of indian cricket team?
+A.kapil Dev
+B.Mahendra Singh Dhoni
+C.Virat Kohli
+D.Rohit Sharma"""
+q2="""who is best wrestler of all time?
+A.Great khali
+B.UNder Taker
+C.Roman Reigns
+D.John Cena"""
+q3="""What is the most friendly dog breed?
+A.Labrador
+B:pug
+C.Golden Retreiver
+D.Rottweiler"""
+q4:"""who is the costliest player in ipl auction history?
+A.Ishan kishan
+B.Ben stokes
+C.Deepak Chahar
+D.Sam Curran"""
+q5:"""Which company developed world's first Touch Screen Mobile phone?
+A.Motorola
+B.IBM
+C.Apple
+D.Samsung"""
+questions={q1:"B",q2:"D",q3:"C",q4:"D",q5:"B"}
+name=input("Hi what's your name?")
+print("hello",name,"welcome to the Quiz.")
+score=0
+for i in questions:
+    print()
+    print(i)
+    flag1=input("Do you want to skip the question?(Yes/No)")
+    if flag1=="Yes":
+        continue
+    ans=input("enter your answewr:")
+    if ans==question(i):
+        print("WOW!!You got one point")
+        score=score+1
+        print("Your current score is:",score)
+    else:
+        print("Wrong Answer ,You lost one point")
+        score=score-1
+        print("Your current Score is:",score)
+    flag2=input("Do you want to quit?type(Yes/No)")
+    if flag2=="yes":
+        break
+print("your total score is:",score)
+
+
+#python project quiz 1
+q1="""who is the successfull caption of indian cricket team?
+A.kapil Dev
+B.Mahendra Singh Dhoni
+C.Virat Kohli
+D.Rohit Sharma"""
+q2="""who is best wrestler of all time?
+A.Great khali
+B.UNder Taker
+C.Roman Reigns
+D.John Cena"""
+q3="""What is the most friendly dog breed?
+A.Labrador
+B:pug
+C.Golden Retreiver
+D.Rottweiler"""
+q4="""Who is the costliest player in ipl auction history?
+A.Ishan kishan
+B.Ben stokes
+C.Deepak Chahar
+D.Sam Curran"""
+q5="""Which company developed world's first Touch Screen Mobile phone?
+A.Motorola
+B.IBM
+C.Apple
+D.Samsung"""
+questions={q1:"B",q2:"D",q3:"C",q4:"D",q5:"B"}
+name=input("Hi what's your name?")
+print("hello",name,"welcome to the Quiz.")
+score=0
+for i in questions:
+    print()
+    print(i)
+    flag1=input("Do you want to skip the question?(Yes/No)")
+    if flag1=="Yes":
+        continue
+    ans=input("enter your answer:")
+    if ans==questions[i]:
+        print("WOW!!You got one point")
+        score=score+1
+        print("Your current score is:",score)
+    else:
+        print("Wrong Answer ,You lost one point")
+        score=score-1
+        print("Your current Score is:",score)
+    flag2=input("Do you want to quit?type(Yes/No)")
+    if flag2=="yes":
+        break
+print("your total score is:",score)
+
+
+#python project 2
+import time
+def countdown(t):
+    while t:
+        mins,secs=divmod(t,60)
+        timer='{:02d}:{:02d}'.format(mins,secs)
+        print(timer)
+        time.sleep(0)
+        t-=1
+    print("FINISHED")
+t=input("Enter the time in seconds:")
+countdown(int(t))
+
+
+#raise
+x=10
+if x%2!=0:
+    raise Exception("should be even number")
+else:
+    print("x is even number,correct")
+
+
+
+variables and var.access.py
+
+#variables and var.access i9n class and method
+class computer():
+    a=10
+    b=20
+    print("classs variable inside class",a)
+
+    def config(self):
+        c=100
+        print("instance access",self.b)
+
+
+lenovo=computer()
+print(lenovo.a)
+print(lenovo.a+lenovo.b)
+dell=computer()
+print("dell",dell.a)
+lenovo.config()
