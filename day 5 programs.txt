@@ -1,0 +1,160 @@
+#calender of the whole year
+import calendar
+
+print("full calendar")
+print(calendar.calendar(2003))
+print("particuar month")
+print(calendar.month(2003,7))
+print("set the first day of week as sunday")
+calendar.setfirstweekday(calendar.SUNDAY)
+print(calendar.month(2021,7))
+
+#date time module
+import datetime
+a=datetime.datetime.now()
+print(a)
+sv=a.strftime("%y")#lower case
+fv=a.strftime("%Y")#upper case
+print("year short version",sv)
+print("year full version",fv)
+
+# calculating factorial of a number using recursive function
+def fact(n):
+    if n==0:
+        return 1
+    return n*fact(n-1)
+n=int(input("enter a number="))
+result=fact(n)
+print(result)
+
+#factors
+n=int(input("enter the number="))
+def factors():
+    for i in range(1,n+1):
+        if n%i==0:
+           print(i)
+factors()
+
+#fibanocci series
+n=int(input("enter a number:"))
+a=0
+b=1
+sum=0
+count=1
+
+while(count<=n):
+    print(sum,end=" ")
+    count+=1
+    a=b
+    b=sum
+    sum=a+b
+
+#functions
+def sample():
+    print("have a great time")
+    print("hello world")
+
+sample()
+print("hi everyone")
+sample()
+
+#demo program lemons
+def lemon():
+    a=int(input("no of lemons avilable:"))
+    b=int(input("no of lemons offered 1st:"))
+    c=int(input("no of lemons offered 2nd:"))
+    d=int(input("no of lemons offered 3rd:"))
+    excess=a-(b+c+d)
+    print("no of excess lemons available:",excess)
+lemon()
+
+#multifunction
+'''def multi():
+    n1=int(input("number="))
+    n2=int(input("number="))
+    n3=int(input("number="))
+    prod=n1*n2*n3
+    print(prod)
+multi()'''
+def multi(x,y,z):
+    prod=x*y*z
+    print(prod)
+res=multi(5,0,9)
+print(res)
+
+def multi1(a,b,c):
+    prod=a+b*c
+    return prod
+def multi1():
+    n1=int(input("number 1="))
+    n2=int(input("number 2="))
+    n3=int(input("number 3="))
+res1=multi1(n1,n2,n3)
+print(res1)
+
+
+#multiplication table
+def multiplicationtable(n):
+
+    for i in range(1,11):
+        print(i,"x",n,"=",i*n)
+n=int(input("which table:"))
+multiplicationtable(n)
+
+#random function
+import random as r
+a=[1,2,3,4,5,6]
+a=r.random()
+print(a)
+
+#rand choices
+import random as r
+a=[1,2,3,4,5,6,7,8,9]
+print(r.choices(a,k=12))
+print(r.uniform(5,10))
+
+x=dir(r)
+print(x)
+
+
+#rand int
+import random as r
+print(r.randint(20,30))
+
+#random choice
+import random as r
+b=[1,2,3,4,5]
+print(r.choice(b))
+
+#random module
+import random as r
+x="i love sweets"
+print(r.sample(x,2))
+
+#random shuffle
+import random as r
+a=[1,2,3,4,5,6]
+r.shuffle(a)
+print(a)
+
+
+#recursion function
+def display():
+    n=int(input("enter a number="))
+    if n==1:
+        display()
+    else:
+        print("over")
+display()
+
+#sum of digits of the given number
+def digits(n):
+    sum=0
+    while  n!=0:
+        rem=n%10
+        sum=sum+rem
+        n=n//10
+    return sum
+n=int(input("enter the number="))
+res=digits(n)
+print(res)
