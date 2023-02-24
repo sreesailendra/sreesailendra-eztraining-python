@@ -1,0 +1,199 @@
+#anonymous function
+L=[1,2,3]
+r=map(lambda x : x+x,L)
+print(list(r))
+#map -helps to create iteration ,it returns map
+res=map(lambda n:pow(n,3),L)
+print(list(res))
+name="luffy"
+(lambda name:print(name))(name)
+--------------------------------------------------------------------------------------------------------------
+#write a program : After creating a list with even numbers within the range 1to 15. now apply lambda function and create a new list which should have square roots of the elements 
+
+import math
+l=[]
+for i in range(1,15):
+    if(i%2==0):
+       l.append(i)
+print(l)
+squ=map(lambda n : math.sqrt(n), l)
+print(list(squ))
+------------------------------------------------------------------------------------------------------------------
+#abstraction 
+from abc import ABC , abstractmethod
+class abstractiondemo (ABC):
+   @abstractmethod
+    def display(self):
+        None
+    @abstractmethod
+    def show(self):
+        None
+-----------------------------------------------------------------------------------------------------------------
+#changing abstract to concrete
+class demo(abstractiondemo):
+    def display(self):
+        print("abstrction method")
+    def show(self):
+        print("2nd fumction")
+obj=demo()
+obj.display()
+obj.show()
+------------------------------------------------------------------------------------------------------------------
+#single inheritence
+#                                                     A      
+#                                                      \       
+#                                                       \      
+#                                                        B
+
+class a:
+     n=30
+class b(a):
+    def calc(self):
+        c=self.n+70
+        print(c)
+obj=b()
+obj.calc()
+-------------------------------------------------------------------------------------------------------------------
+#mutiple inheritence 
+#                                                    dad       mom
+#                                                      \      /  
+#                                                       \    /    
+#                                                        child
+
+class mom:
+    def mdisplay(self):
+        print("mom class")
+class dad:
+    def ddisplay(self):
+        print("dad class")
+class child(mom,dad):
+    def cdisplay(self):
+        print("child class")
+c1=child()
+c1.cdisplay()
+c1.mdisplay()
+c1.ddisplay()
+----------------------------------------------------------------------
+
+#multilevel inheritence 
+#                                                        gp
+#                                                       /    
+#                                                      /      
+#                                                    p       
+#                                                   / 
+#                                                  /  
+#                                                 c    
+
+
+class grandparent:
+    def display(self):
+        print("grandparent class")
+class parent(grandparent):
+    def show(self):
+        print("parent class")
+class child(parent):
+    def printing(self):
+        print("child class")
+c=child()
+c.display()
+c.show()
+c.printing()
+-----------------------------------------------------------------------
+
+#heirarchial inheritence
+#                                                          p
+#                                                       /    \
+#                                                      /      \
+#                                                    c1        c2
+
+class parent:
+    def display(self):
+        print("parent class")
+class child1(parent):
+    def show(self):
+        print("child1 class")
+class child2(parent):
+    def printing(self):
+        print("child2 class")
+c1=child1()
+c1.display()
+c1.show()
+#c1.printing() wont work
+c2=child2()
+c2.display()
+#c2.show() wont work
+c2.printing()
+-------------------------------------------------------------------------
+
+#hybrid inheritence
+#                                                          p
+#                                                       /    \
+#                                                      /      \
+#                                                    c1        c2
+#                                                   /  \      /  \
+#                                                  /    \    /    \
+#                                              c1k1    c1k2 c2k1  c2k2
+class p:
+    def display(self):
+        print("parent class")
+class c1(p):
+    def c1show(self):
+        print("child1 class")
+class c2(p):
+    def c2show(self):
+        print("child2 class")
+class c1k1(c1):
+    def kprint(self):
+        print("c1k1 class")
+class c1k2(c1):
+    def kshow(self):
+        print("c1k2 class")
+class c2k1(c2):
+    def kshow(self):
+        print("c1k1 class")
+class c2k2(c2):
+    def kprint(self):
+        print("c1k2 class")
+                                                                      
+oc1k1=c1k1()                                                       
+oc1k2=c1k2()                                                    
+oc2k1=c2k1()                                                    
+oc2k2=c2k2()                                                   
+                                                              
+oc1k1.kprint()                                              
+oc1k1.c1show()                                              
+oc1k1.display()
+
+oc1k2.c1show()
+oc1k2.c1show()
+oc1k2.display()
+
+oc2k1.kshow()
+oc2k1.c2show()
+oc2k1.display()
+
+oc2k2.kprint()
+oc2k2.c2show()
+oc2k2.display()
+------------------------------------------------------------------------------------------
+#happy numbers
+
+n=int(input("enter a number"))
+while(n>1):
+    sum=0
+    for i in range(0,len(str(n))+1):
+        rem=n%10
+        sum=sum+(rem*rem)
+        n=n//10
+    n=sum
+if n==1:
+    print("happy number")
+else:
+    print("not a happy number")
+     
+
+
+
+
+
+
