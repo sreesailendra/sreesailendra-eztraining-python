@@ -1,0 +1,24 @@
+Functions:
+lambda function:
+It is called as anonymous function.
+when we want to use function concept alone without using function name there we apply concept of lambda function.
+
+The four pillars of OOPS:
+
+1.ABSTRACTION-hiding the implementation part and showing only what is required for the users.
+   example: exe file
+   we can make class or method as abstract , opposite to abstract is concrete.
+2.ENCAPSULATION- binding data into  a single unit.
+    it is of 3 types:
+         -private:  can used where it is declared
+         -public:    one class can be accessed by any other class.
+         -protected:  can be accessed only where it got declared --whichever class inheritted from this class there also we can use.
+3.INHERITENCE- base/parent class and derived/child class
+    derived class will inherit properties of parent class.
+   types of inheritence:
+      -single
+      -multiple
+      -multilevel
+      -heirarchial
+      -hibrid
+4.POLYMORPHISM-Polymorphism in python defines methods in the child class that have the same name as the methods in the parent class. In inheritance, the child class inherits the methods from the parent class. Also, it is possible to modify a method in a child class that it has inherited from the parent class
