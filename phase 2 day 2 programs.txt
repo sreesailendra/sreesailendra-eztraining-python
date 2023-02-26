@@ -1,0 +1,305 @@
+def happy(n):
+    s=r=0
+    while(n>=0):
+        for i in range(0,len(str(n))+1):
+            r=n%10
+            s=s+r**2
+            n=n//10
+        return s
+n=int(input("enter a number: "))
+res=n
+while(res!=1 and res!=4):
+    res=happy(res)
+if res==1:
+    print("given number is happy number")
+else:
+    print("its not a happy number")
+------------------------------------------------------------------
+#ENCAPSULATION
+#protected
+class encap:
+    _a=10
+    c=20
+    def encapfunction(self):
+        _b=200
+        print("encap function-accessing protected")
+        print("self._a+10")
+obj=encap()
+print(obj._a)
+obj.encapfunction()
+print(obj.c)
+***************************************************
+
+#private
+class encap:
+    __a=10
+    print(__a)
+    def encapfunction(self):
+        print("encap function")
+        print(self.__a)
+obj=encap()
+obj.encapfunction()
+print(obj.__a)
+
+-----------------------------------------------------------------
+
+POLYMORPHISM
+same item is used for different purposes 
+TYPES of polymorphism
+1.over loading
+
+a.operator over loading 
+ex:+(used as arithmetic operator and also for concatination)
+
+b.method over loading
+ex: 
+class moverload:
+    def display(self,a=None,b=None):
+        print(a,b)
+obj=moverload()
+print("without aregument")
+obj.display()
+print("with areguments")
+obj.display(20,40)
+print("with one aregument")
+obj.display(69)
+		     
+2.over riding
+   if a method is defective or cannot be used inside derived class , it will take it from its base class or parent's class
+ex:
+class vijayawada():
+    def placename(self):
+        print("vijayawada placename is KLU")
+    def student(self):
+        print("YES - vijy")
+    def which_Year(self):
+        print("3rd Year")
+class hyderabad():
+    def placename(self):
+        print(" hyderabad placename is HYD -KLU")
+    def student(self):
+        print("YES - hyd")
+    def which_Year(self):
+        print("3rd Year hyd")
+obj_vjy=vijayawada()
+obj_hyd=hyderabad()
+for details in (obj_vjy,obj_hyd):
+    details.placename()
+    details.student()
+    details.which_Year()
+--------------------------------------------------------------
+
+DATA STRUCTURES-
+helps to write efficient programs
+linear - store data sequentially
+ex: static- array 
+    dynamic- linked list, stack, queue, matrix
+
+non linear - no squence is followed for storing data 
+ex: binary trees, heap, hash table , graph
+ 
+LINKED LIST:
+as the name says list of items which are linked with one another
+  -single
+  -double
+  -circular
+ 
+SINGLE LINKED LIST:
+ 
+  #creating node declaration & definition
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class singlelinkedlist:
+    def __init__(self):
+        self.head=None
+    def display(self):
+        if self.head is None:
+            print("linked list is empty")
+        else:
+            temp=self.head#temp=first node
+            while temp:
+                print(temp.data,"->",end="")
+                #temp data means first nodes data
+                temp=temp.next#establishing link
+obj=singlelinkedlist()
+#node creation-initialising
+n=Node(10)
+obj.head=n
+n1=Node(20)
+obj.head.next=n1#next node value
+n2=Node(30)
+n1.next=n2
+obj.display()
+---------------------------------------------------------------------
+
+#creating node declaration & definition
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class singlelinkedlist:
+    def __init__(self):
+        self.head=None
+    def display(self):
+        if self.head is None:
+            print("linked list is empty")
+        else:
+            temp=self.head#temp=first node
+            while temp:
+                print(temp.data,"->",end="")
+                #temp data means first nodes data
+                temp=temp.next#establishing link
+obj=singlelinkedlist()
+#node creation-initialising
+n=Node("w")
+obj.head=n
+n1=Node("i")
+obj.head.next=n1#next node value
+n2=Node("n")
+n1.next=n2
+n3=Node("n")
+n2.next=n3
+n4=Node("e")
+n3.next=n4
+n5=Node("r")
+n4.next=n5
+obj.display()
+--------------------------------------------------------------
+
+OPERATIONS
+ 1. insert........
+
+      -AT   BEGINNING
+           
+#creating node declaration & definition
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class singlelinkedlist:
+    def __init__(self):
+        self.head=None
+    def insert_beginning(self,data):
+        nb=Node(data)
+        nb.next=self.head
+        self.head=nb
+        
+    def display(self):
+        if self.head is None:
+            print("linked list is empty")
+        else:
+            temp=self.head#temp=first node
+            while temp:
+                print(temp.data,"->",end="")
+                #temp data means first nodes data
+                temp=temp.next#establishing link
+obj=singlelinkedlist()
+#node creation-initialising
+n=Node("w")
+obj.head=n
+n1=Node("i")
+obj.head.next=n1#next node value
+n2=Node("n")
+n1.next=n2
+n3=Node("n")
+n2.next=n3
+n4=Node("e")
+n3.next=n4
+n5=Node("r")
+n4.next=n5
+obj.insert_beginning("i'm")
+obj.display()
+
+-------------------------------------------------------------------------
+       -AT  END
+
+#creating node declaration & definition
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class singlelinkedlist:
+    def __init__(self):
+        self.head=None
+    def insert_end(self,data):
+        ne=Node(data)
+        temp=self.head
+        while temp.next:
+            temp=temp.next
+        temp.next=ne
+    def display(self):
+        if self.head is None:
+            print("linked list is empty")
+        else:
+            temp=self.head#temp=first node
+            while temp:
+                print(temp.data,"->",end="")
+                #temp data means first nodes data
+                temp=temp.next#establishing link
+obj=singlelinkedlist()
+#node creation-initialising
+n=Node("w")
+obj.head=n
+n1=Node("i")
+obj.head.next=n1#next node value
+n2=Node("n")
+n1.next=n2
+n3=Node("n")
+n2.next=n3
+n4=Node("e")
+n3.next=n4
+n5=Node("r")
+n4.next=n5
+obj.insert_end(" <S>")
+obj.display()
+----------------------------------------------------------------------
+      -AT desired POSITION
+
+ #creating node declaration & definition
+class Node:
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+class singlelinkedlist:
+    def __init__(self):
+        self.head=None
+    def insert_position(self,pos,data):
+        np=Node(data)
+        temp=self.head
+        for i in range(pos-1):
+            temp=temp.next
+        #np.data=data
+        np.next=temp.next
+        temp.next=np
+    def display(self):
+        if self.head is None:
+            print("linked list is empty")
+        else:
+            temp=self.head#temp=first node
+            while temp:
+                print(temp.data,"->",end="")
+                #temp data means first nodes data
+                temp=temp.next#establishing link
+obj=singlelinkedlist()
+#node creation-initialising
+n=Node("w")
+obj.head=n
+n1=Node("i")
+obj.head.next=n1#next node value
+n2=Node("n")
+n1.next=n2
+n3=Node("n")
+n2.next=n3
+n4=Node("e")
+n3.next=n4
+n5=Node("r")
+n4.next=n5
+obj.insert_position(3," <S>")
+obj.display()
+
+
+delete 
+
+search
